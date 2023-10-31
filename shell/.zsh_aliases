@@ -1,0 +1,26 @@
+# Brew
+alias maketea='brew update && brew upgrade && brew cleanup'
+
+#AWSume alias to source the AWSume script
+alias awsume="source \$(pyenv which awsume)"
+alias awsenvtimeremain='_awsenvtimeremain'
+
+#assume alias to source the Granted script
+alias assume="source assume"
+
+# Terraform/Terragrunt
+alias tf='terraform'
+alias tfinit='terraform init'
+alias tfp='terraform plan'
+alias tfa='terraform apply'
+alias tg='terragrunt'
+alias tgp='terragrunt plan'
+alias tga='terragrunt apply'
+alias tgp-all='terragrunt run-all plan'
+alias tga-all='terragrunt run-all apply'
+alias tgcc='find . -type d -name ".terragrunt-cache" -o -name ".terraform" -prune -exec rm -rf {} \;'
+
+# Git
+alias git-remote-ssh='git remote set-url origin "$(git remote get-url origin | sed -E '\''s,^https://([^/]*)/(.*)$,git@\1:\2,'\'')"'
+alias git-remote-http='git remote set-url origin "$(git remote get-url origin | sed -E '\''s,^git@([^:]*):/*(.*)$,http://\1/\2,'\'')"'
+alias git-remote-https='git remote set-url origin "$(git remote get-url origin | sed -E '\''s,^git@([^:]*):/*(.*)$,https://\1/\2,'\'')"'

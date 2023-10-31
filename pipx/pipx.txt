@@ -1,0 +1,8 @@
+ansible
+autopep8
+awscliv2
+awsume
+cfn-lint
+git-remote-codecommit
+virtualenv
+virtualenvwrapper

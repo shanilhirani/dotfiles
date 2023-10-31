@@ -2,24 +2,25 @@ tap "codeship/taps"
 tap "common-fate/granted"
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
+tap "homebrew/services"
 tap "minamijoyo/hcledit"
 tap "romkatv/powerlevel10k"
 # Run your GitHub Actions locally
 brew "act"
+# General-purpose lossless data-compression library
+brew "zlib"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # New file format for still image compression
 brew "jpeg-xl"
-# GNU database manager
-brew "gdbm"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Portable Foreign Function Interface library
+brew "libffi"
 # Library for command-line editing
 brew "readline"
+# GNU database manager
+brew "gdbm"
 # Shell extension to jump to frequently used directories
 brew "autojump"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -30,8 +31,8 @@ brew "awscli"
 brew "azure-cli"
 # Encode and decode base64 files
 brew "base64"
-# Programmable completion for Bash 3.2
-brew "bash-completion"
+# Programmable completion for Bash 4.2+
+brew "bash-completion@2"
 # Parser generator
 brew "bison"
 # Python code formatter
@@ -44,10 +45,8 @@ brew "cfn-lint"
 brew "checkov"
 # Ruby environment tool
 brew "chruby"
-# Portable Foreign Function Interface library
-brew "libffi"
 # Container runtimes on MacOS (and Linux) with minimal setup
-brew "colima"
+brew "colima", restart_service: true
 # Defines a standard way of committing rules and communicating it
 brew "commitizen"
 # Open source suite of directory software
@@ -57,7 +56,7 @@ brew "curl"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Pack, ship and run any application as a lightweight container
-brew "docker", link: false
+brew "docker"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Docker Credential Helper for Amazon ECR
@@ -94,10 +93,12 @@ brew "nghttp2"
 brew "nmap"
 # Platform built on V8 to build network applications
 brew "node"
-# Tool for creating identical machine images for multiple platforms
-brew "packer"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Theme for zsh
+brew "powerlevel10k"
 # Tool for creating isolated virtual python environments
 brew "virtualenv"
 # Framework for managing multi-language pre-commit hooks
@@ -122,8 +123,6 @@ brew "speedtest-cli"
 brew "starship"
 # Tool Command Language
 brew "tcl-tk"
-# Send macOS User Notifications from the command-line
-brew "terminal-notifier"
 # Tool to generate documentation from Terraform modules
 brew "terraform-docs"
 # Detect compliance and security violations across Infrastructure as Code
@@ -144,10 +143,10 @@ brew "tree"
 brew "yamllint"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
-# General-purpose lossless data-compression library
-brew "zlib"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
 # Additional completion definitions for zsh
 brew "zsh-completions"
 # Fish shell like syntax highlighting for zsh
@@ -156,8 +155,6 @@ brew "zsh-syntax-highlighting"
 brew "common-fate/granted/granted"
 # A command line editor for HCL
 brew "minamijoyo/hcledit/hcledit"
-# Theme for zsh
-brew "romkatv/powerlevel10k/powerlevel10k"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Cloud native persistent desktop virtualization
@@ -227,4 +224,5 @@ vscode "puppet.puppet-vscode"
 vscode "rebornix.ruby"
 vscode "redhat.vscode-commons"
 vscode "redhat.vscode-yaml"
+vscode "Shopify.ruby-lsp"
 vscode "wingrunr21.vscode-ruby"
